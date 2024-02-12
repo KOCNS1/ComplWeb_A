@@ -1,0 +1,15 @@
+table {
+  width: auto;
+  border: 1px solid #aaaaaa;
+}
+table th,
+table td {
+  text-align: center;
+  width: 75px;
+  border: 1px solid #aaaaaa;
+}
+.cell.active {
+  background-color: #8bc34a;
+  color: white;
+  font-weight: 600;
+}
