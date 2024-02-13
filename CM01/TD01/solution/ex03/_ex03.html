@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sakura.css" type="text/css" />
+    <title>Ex03</title>
+  </head>
+  <body>
+    <h1>Exercice 03 - Premiers évènements et redirection dynamique</h1>
+    <p>Il est temps de créer notre premier évènement en javascript.</p>
+    <blockquote>
+      > Sous l'énnoncé de cet exercice, vous trouverez un lien qui redirige en
+      ce moment vers Google. Vous allez rajouter un évènement sur ce lien pour
+      demander à l'utilisateur un terme de recherche. Une fois la saisie
+      effectuée, redirigez l'utilisateur sur le site de Google avec le terme de
+      recherche saisi. Pour cela, redirigez sur l'URL
+      <code
+        >https://www.google.com/search?q={-- insérez le terme de recherche ici
+        --}</code
+      >
+    </blockquote>
+    <blockquote>
+      > Vous constatez probablement que votre redirection fonctionne, mais que
+      votre navigateur ouvre en plus un nouvel onglet sur la page d'accueil de
+      Google. Ceci est dû au fait qu'il y a encore un <code>href</code> sur la
+      balise <code>a</code>. Sans changer le <code>href</code>, trouvez une
+      façon d'empêcher l'évènement de base de l'évènement clic sur le lien afin
+      qu'il n'ouvre pas un lien vers Google dans un nouvel onglet
+    </blockquote>
+    <blockquote>
+      > Adaptez votre code avec le changement suivant: Lorsqu'on clique sur le
+      lien et qu'on saisit notre terme de recherche, on alerte l'utilisateur
+      qu'il sera redirigé après 5 secondes. Effectuez cette redirection après 5
+      secondes.
+    </blockquote>
+    <blockquote>
+      Références complémentaires utiles :
+      <ul>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent"
+            target="_blank"
+            ><code>encoreURIComponent</code></a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.w3schools.com/jsref/event_preventdefault.asp"
+            target="_blank"
+            ><code>preventDefault()</code></a
+          >
+        </li>
+      </ul>
+    </blockquote>
+    <hr />
+    <a href="https://www.google.com/" target="_blank">Lien vers Google</a>
+    <script src="_ex03.js"></script>
+  </body>
+</html>
