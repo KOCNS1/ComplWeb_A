@@ -1,0 +1,39 @@
+#console {
+  max-height: 216px;
+  height: 216px;
+}
+#console:empty::before {
+  content: "No events logged yet";
+  font-style: italic;
+  font-size: 1.5rem;
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+    background-color: transparent;
+  }
+  10% {
+    background-color: #e4e4e4;
+  }
+  20% {
+    background-color: transparent;
+  }
+  30% {
+    background-color: #e4e4e4;
+  }
+  40% {
+    background-color: transparent;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+#console > * {
+  animation: fadeout 2s;
+  animation-fill-mode: forwards;
+}

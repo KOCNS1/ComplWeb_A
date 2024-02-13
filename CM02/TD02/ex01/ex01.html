@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sakura.css" type="text/css" />
+    <link rel="stylesheet" href="ex01.css" type="text/css" />
+    <title>Ex01</title>
+  </head>
+  <body>
+    <h1>Exercice 01 - Les limites du <code>innerHTML</code></h1>
+    <p>
+      Dans le TP précédent, vous avez été amenés à utiliser l'<code
+        >innerHTML</code
+      >
+      comme outil pour changer le contenu HTML à la volée dans votre page HTML.
+      Cette méthode, bien que fonctionnelle, possède des limitations qu'il faut
+      garder en tête.
+    </p>
+    <blockquote>
+      > Analysez le code contenu dans le script de cet exercice
+      (<code>ex01.js</code>). Déduisez ce qui est censé se passer lorsque l'on
+      clique plusieurs fois sur le boutton ci-dessous.
+    </blockquote>
+    <blockquote>
+      > Cliquez plusieurs fois sur le bouton ci-dessous. Vous constaterez
+      probablement une incohérence par rapport à votre analyse. Essayez de
+      formuler une hypothèse sur pourquoi ça arrive.<br />Pensez à utiliser la
+      console du navigateur pour investiguer ce problème.
+    </blockquote>
+    <blockquote>
+      > Adaptez le script de <code>ex01.js</code> afin de rétablir le
+      comportement attendu sans utiliser <code>innerHTML</code>, ni toucher à la
+      structure HTML.
+    </blockquote>
+    <blockquote>
+      Références complémentaires utiles :
+      <ul>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement"
+            target="_blank"
+            ><code>document.createElement()</code></a
+          >
+        </li>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild"
+            target="_blank"
+            ><code>Node.appendChild()</code></a
+          >
+        </li>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent"
+            target="_blank"
+            ><code>Node.textContent</code></a
+          >
+        </li>
+      </ul>
+    </blockquote>
+    <hr />
+    <div id="main-div"><button>Append text to the outer div</button></div>
+    <dl>
+      <dr>Réponse à la deuxième question</dr>
+      <dd>-- Ecrivez votre réponse ici --</dd>
+    </dl>
+    <hr />
+    <script src="ex01.js"></script>
+  </body>
+</html>

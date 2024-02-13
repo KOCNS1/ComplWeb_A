@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sakura.css" type="text/css" />
+    <link rel="stylesheet" href="ex05.css" type="text/css" />
+    <title>Ex05</title>
+  </head>
+  <body>
+    <h1>Exercice 05 - Events en situation plus réelle</h1>
+    <p>
+      Afin de consolider des évènements dans un cas d'usage plus "réel", vous
+      aurez à charge ici de créer une gallerie d'images complètement interactif
+      à l'aide de javascript.
+    </p>
+    <blockquote>
+      > Ci-dessous une base de gallerie d'images en HTML + CSS complètement
+      statique. Votre but est de rajouter les évènements suivants:
+      <details>
+        <summary>Déroulez pour voir les détails</summary>
+        <ul>
+          <li>Un click sur les miniatures change l'image principale</li>
+          <li>
+            En dessous de l'image principale, il y a un petit bloc dédié à
+            afficher une description de l'image. Cette description est présente
+            dans l'attribut <code>alt</code> de l'image miniature. Vous devrez
+            extraire ce texte afin de l'afficher à côté de l'image principale
+            sélectionnée
+          </li>
+          <li>
+            Un click sur les flèches gauche et droite cyclent à travers les
+            images
+          </li>
+          <li>
+            Il doit être possible de de cycler à travers les images en appuyant
+            sur les flèches droite et gauche du clavier
+          </li>
+          <li>
+            La page devra cycler à travers les images automatiquement toutes les
+            5 secondes
+          </li>
+          <li>
+            Empêchez les images de cycler automatiquement lorsque l'utilisateur
+            positionne sa souris sur l'image principale ou les miniatures.
+          </li>
+          <li>
+            Un clic sur l'image principale permet de zoomer l'image pour la voir
+            couvrir toute la page et l'afficher "en plein écran"
+          </li>
+        </ul>
+      </details>
+    </blockquote>
+    <hr />
+    <div id="gallery">
+      <div class="main-picture-container">
+        <img src="ex05-chaton01.jpg" alt="☆*:. o(≧▽≦)o .:*☆" />
+        <p class="description">☆*:. o(≧▽≦)o .:*☆</p>
+      </div>
+      <div class="thumbnails">
+        <div class="icon"><button>&lt;</button></div>
+        <div class="image-container">
+          <img src="ex05-chaton01.jpg" alt="☆*:. o(≧▽≦)o .:*☆" class="active" />
+          <img src="ex05-chaton02.jpg" alt="༼∩•́ω•̀∩༽" />
+          <img src="ex05-chaton03.jpg" alt="(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧" />
+          <img src="ex05-chaton04.jpg" alt="(°ヮ°)" />
+          <img src="ex05-chaton05.jpg" alt="(=^-ω-^=)" />
+          <img src="ex05-chaton06.jpg" alt="ᕙ(˵◕ω◕˵✿)つ" />
+          <img src="ex05-chaton07.jpg" alt="(✿ ◕ᗜ◕)━♫.*･｡ﾟ" />
+        </div>
+        <div class="icon"><button>&gt;</button></div>
+      </div>
+    </div>
+  </body>
+</html>
