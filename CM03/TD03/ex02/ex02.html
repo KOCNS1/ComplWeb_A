@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="ex02.css" />
+    <title>Pokegotchi</title>
+  </head>
+  <body>
+    <div class="flexbox main">
+      <button id="add-pokemon">Add a new Pokémon</button>
+      <div id="poke-containers">
+        <div class="poke-container flex">
+          <div class="info">
+            <div class="flex">
+              <ul class="profile">
+                <li>Name: <span class="name">Eevee</span></li>
+                <li>Lvl: <span class="lvl">1</span></li>
+              </ul>
+            </div>
+            <div class="flex stats">
+              <ul class="stats">
+                <li>Hunger: <span class="hunger">10</span></li>
+                <li>Sleepiness: <span class="sleepiness">10</span></li>
+                <li>Boredom: <span class="boredom">10</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex actions">
+            <button class="feed">Feed</button>
+            <button class="play">Play</button>
+          </div>
+        </div>
+      </div>
+      <div class="pet">
+        <div class="on" id="pet-image">
+          <img
+            style="
+              top: max(0px, calc(50% - 150px));
+              left: max(0px, calc(50% - 150px));
+            "
+            class="sprite"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/133.gif"
+          />
+        </div>
+      </div>
+      <div class="flex actions">
+        <ul class="actions">
+          <button id="toggle-lights">Toggle Lights</button>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

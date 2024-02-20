@@ -1,0 +1,77 @@
+/* Main CSS */
+body {
+  font-family: "Segoe UI", arial, sans-serif;
+  background-color: tomato;
+  background: url("bg.png");
+  background-size: cover;
+}
+/* General */
+.flex {
+  text-align: center;
+}
+
+/* Profile & Stats CSS */
+.profile > li,
+.stats > li {
+  padding: 0.5em;
+  display: inline;
+  font-size: 1.25em;
+  color: white;
+  text-shadow: 2px 2px 5px #8a0383;
+}
+
+/* Pet CSS */
+#pet-image {
+  background-color: gray;
+  background-size: cover;
+  border-radius: 50px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+.on {
+  background: linear-gradient(rgba(212, 212, 137, 0.5), rgba(0, 0, 0, 0.5)),
+    url("home.png");
+  background-position: center;
+}
+.off {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("home.png");
+  background-position: center;
+}
+
+img.sprite {
+  height: 150px;
+  width: 150px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  position: absolute;
+}
+
+/* Actions CSS */
+button {
+  font-size: 1.5em;
+  font-family: "Karla", sans-serif;
+  color: darkslategray;
+  background-color: white;
+  min-width: 15%;
+  border-radius: 15px;
+  box-shadow: 2px 2px 10px #b424ad;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Poke Container */
+.poke-container {
+  display: flex;
+  gap: 1rem;
+}
+.poke-container .actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.poke-container .actions button {
+  margin: 0;
+}
