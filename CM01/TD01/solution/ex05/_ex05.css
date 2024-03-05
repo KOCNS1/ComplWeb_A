@@ -1,0 +1,17 @@
+/* C'est pas impossible qu'il y ait un peu de CSS à rajouter ici... */
+#game-container table {
+  border: 1px solid #aaaaaa;
+  width: auto;
+}
+#game-container table td {
+  border: 1px solid #aaaaaa;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#game-container table td.played {
+  cursor: default;
+}

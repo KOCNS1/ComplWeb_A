@@ -1,0 +1,61 @@
+main {
+  padding: 32px 0;
+}
+.container .row {
+  margin-bottom: 16px;
+}
+
+.card {
+  height: 100%;
+}
+
+ol {
+  list-style: none;
+  counter-reset: item;
+  padding: 0;
+}
+li {
+  counter-increment: item;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  line-height: 24px;
+}
+li:before {
+  margin-right: 10px;
+  content: counter(item);
+  background: lightblue;
+  border-radius: 100%;
+  color: white;
+  width: 1.2em;
+  text-align: center;
+  display: inline-block;
+  font-family: monospace;
+  min-width: 24px;
+}
+li.error:before {
+  background: lightslategray;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #787878 #d6d6d6;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #d6d6d6;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #787878;
+  border-radius: 2px;
+  border: 0px solid #ffffff;
+}

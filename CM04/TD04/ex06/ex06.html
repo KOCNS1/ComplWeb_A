@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sakura.css" type="text/css" />
+    <link rel="stylesheet" href="ex06.css" type="text/css" />
+    <title>Ex06</title>
+  </head>
+  <body>
+    <h1>Exercice 06 - Encore des requêtes dynamiques</h1>
+    <p>
+      Dans la même continuté des exercices précédents, réalisons un formulaire
+      dynamique qui ne demande pas de recharger la page pour avoir un résultat.
+    </p>
+    <blockquote>
+      > Il existe un webcomic très connu sous le nom d'XKCD que vous pouvez
+      regarder sur l'URL suivante:
+      <a href="https://xkcd.com/" target="_blank">https://xkcd.com/</a>. Le but
+      de cet exercice est de prendre le formulaire ci-dessous pour charger
+      dynamiquement une BD provenant de cette série basé sur la saisie
+      utilisateur. Un utilisateur va ainsi saisir un numéro de BD dans l'input,
+      et lorsqu'il appuyera sur le bouton, une requête sera effectuée pour
+      récupérer les informations basé sur le numéro de BD saisi. Une fois les
+      informations récupérées, exploitez son contenu pour afficher:
+      <ul>
+        <li>Son titre</li>
+        <li>
+          Sa description (stockée dans l'attrubut "alt" de l'objet de retour)
+        </li>
+        <li>Une image contenant la BD en question</li>
+      </ul>
+      Vous ferez usage de l'URL
+      <a href="https://xkcd.vercel.app/?comic=614" target="_blank">
+        https://xkcd.vercel.app/?comic={comicId}
+      </a>
+      pour récupérer les informations demandées. L'attribut
+      <code>comicId</code> dans l'URL est simplement le numéro de BD que l'on
+      souhaite récupérer. A l'heure de la rédaction de cet exercice, c'est un
+      chiffre qui peut aller de 1 à 2741.
+      <b>
+        Pensez à gérer le cas d'erreur lorsque l'utilisateur saisit un numéro de
+        BD qui n'existe pas. Regardez le contenu de l'objet "Response" après un
+        fetch pour tacler cette problématique
+      </b>
+    </blockquote>
+    <hr />
+    <form>
+      <label for="first-name">
+        Comic number <input value="1" type="number" />
+      </label>
+      <button type="submit">Get Comic</button>
+    </form>
+    <hr />
+    <div class="comic-container">
+      <h2>-- Insert Comic Title Here--</h2>
+      <img
+        src="https://place-hold.it/600x300"
+        alt="-- Insert Alt Text Here --"
+      />
+      <small>-- Insert Alt Text Here --</small>
+    </div>
+  </body>
+</html>

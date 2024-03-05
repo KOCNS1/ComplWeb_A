@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sakura.css" type="text/css" />
+    <title>Ex05</title>
+  </head>
+  <body>
+    <h1>Exercice 05 - Formulaire avec requêtes dynamiques</h1>
+    <p>
+      Utilisons l'API Fetch dans un formulaire pour faciliter la saisie d'une
+      adresse
+    </p>
+    <blockquote>
+      > Il existe des APIs gouvernementales officielles pour récupérer des
+      informations géographiques sur le territoire français.<br />
+      Vous devrez faire usage de ces webservices pour permettre une saisie
+      dynamique du formulaire ci-dessous. L'utilisateur sélectionne dans un
+      premier temps sa région. Suite à cette sélection, chargez la liste des
+      départements. Faites de même pour les communes.<br />
+      Utilisez les webservices suivants:
+      <ul>
+        <li>
+          <a href="https://geo.api.gouv.fr/regions" target="_blank">
+            https://geo.api.gouv.fr/regions
+          </a>
+          pour la liste des régions
+        </li>
+        <li>
+          <a
+            href="https://geo.api.gouv.fr/regions/44/departements"
+            target="_blank"
+          >
+            https://geo.api.gouv.fr/regions/${codeRegion}/departements
+          </a>
+          pour la liste des départements basé sur le code région fourni dans
+          l'URL
+        </li>
+        <li>
+          <a
+            href="https://geo.api.gouv.fr/departements/57/communes"
+            target="_blank"
+          >
+            https://geo.api.gouv.fr/departements/${codeDepartement}/communes
+          </a>
+          pour la liste des communes basé sur le code département fourni dans
+          l'URL
+        </li>
+      </ul>
+    </blockquote>
+    <hr />
+    <form>
+      <label for="region">
+        Région<select id="region" name="region"></select>
+      </label>
+      <label for="departement">
+        Département<select id="departement" name="departement"></select>
+      </label>
+      <label for="commune">
+        Commune<select id="commune" name="commune"></select>
+      </label>
+    </form>
+  </body>
+</html>

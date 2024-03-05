@@ -1,0 +1,9 @@
+form {
+  display: flex;
+  justify-content: space-between;
+}
+.comic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

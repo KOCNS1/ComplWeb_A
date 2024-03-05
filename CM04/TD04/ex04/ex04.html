@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sakura.css" type="text/css" />
+    <title>Ex04</title>
+  </head>
+  <body>
+    <h1>Exercice 04 - Premier appel avec interaction dynamique</h1>
+    <p>
+      En utilisant l'API fetch, nous allons faire notre premier call vers un
+      service externe pour afficher une donnée dans notre page!
+    </p>
+    <blockquote>
+      > Il existe une petite API qui donne des informations diverses sur ces
+      superbes créatures que sont les chats. Vous pouvez y accéder à cette URL:
+      <a href="https://meowfacts.herokuapp.com/" target="_blank">
+        https://meowfacts.herokuapp.com/ </a
+      >. En utilisant les données que procure cette ressource, affichez un
+      nouveau résultat à chaque appui sur le bouton ci-dessous. Pensez à gérer
+      l'asynchronisme en indiquant que la ressource est en train de charger.
+      Empêchez le clic sur le bouton si c'est en train de charger.
+    </blockquote>
+    <hr />
+    <button>Generate a cat fact</button>
+    <p id="result"><i>-- Your cat fact will appear here --</i></p>
+  </body>
+</html>
