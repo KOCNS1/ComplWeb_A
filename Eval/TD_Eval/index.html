@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="vendor/bootstrap-5.1.3-dist/css/bootstrap.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="index.css" type="text/css" />
+    <script src="vendor/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
+    <title>Météo</title>
+  </head>
+  <body>
+    <header class="p-3 bg-dark text-white">
+      <div class="container">
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+        >
+          <a
+            href="/"
+            class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
+          >
+            <img
+              src="assets/logo.svg"
+              alt="Weather App Logo"
+              class="bi me-2"
+              width="40"
+              height="32"
+            />
+          </a>
+
+          <ul
+            class="nav col-12 col-lg-auto me-lg-au to mb-2 justify-content-center mb-md-0"
+          >
+            <li>
+              <a href="index.html" class="nav-link px-2 text-secondary">Home</a>
+            </li>
+          </ul>
+          <div class="spacer flex-grow-1"></div>
+          <div class="text-end">
+            <button type="button" class="btn btn-outline-light me-2">
+              Login
+            </button>
+            <a href="signup.html">
+              <button class="btn btn-primary">Sign-up</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <div class="row">
+        <div class="col city-select">
+          <label class="form-label"
+            >Select a city:<select id="city-select" class="form-select">
+              <option>Luxembourg</option>
+              <option>Paris</option>
+              <option>Berlin</option>
+              <option>[...]</option>
+            </select>
+          </label>
+          <form>
+            <label class="form-label"
+              >Manual search:
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="manual-search"
+                /><button
+                  type="submit"
+                  class="input-group-text btn-primary"
+                  id="submit-manual-search"
+                >
+                  Search
+                </button>
+              </div></label
+            >
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col header-block">
+          <div class="text-block">
+            <h1>Luxembourg</h1>
+            <small
+              >Updated at:
+              <span id="last-update-date">14:35:42 06/03/2023</span></small
+            >
+            <div>
+              <button class="btn btn-outline-primary btn-sm" id="refresh">
+                Refresh Data
+              </button>
+            </div>
+          </div>
+          <img
+            src="assets/weather-icons/Weather icons-02.png"
+            alt="Weather Icon"
+          />
+          <div class="info-block">
+            <div class="left">
+              <span>
+                Current temperature: <span id="current-temp">12°C</span>
+              </span>
+              <span>
+                Today's sunrise: <span id="current-sunrise">06:02</span>
+              </span>
+              <span>
+                Today's sunset: <span id="current-sunset">18:24</span>
+              </span>
+            </div>
+            <div class="right">
+              <span class="label">Wind direction:</span>
+              <div class="compass">
+                <div class="direction">
+                  <p>N<span>42 km/h</span></p>
+                </div>
+                <div class="arrow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <h2>Hourly Weather</h2>
+        <div id="hourly-weather">
+          <div class="hour-block">
+            <span class="time">07:00</span>
+            <small class="date">06/05/2023</small>
+            <img
+              src="assets/weather-icons/Weather icons-03.png"
+              alt="Weather Icon"
+            />
+            <span>Temp: <span class="hour-temp">-2°C</span></span>
+          </div>
+          <div class="hour-block">
+            <span class="time">08:00</span>
+            <small class="date">06/05/2023</small>
+            <img
+              src="assets/weather-icons/Weather icons-04.png"
+              alt="Weather Icon"
+            />
+            <span>Temp: <span class="hour-temp">-1°C</span></span>
+          </div>
+          <div class="hour-block">
+            <span class="time">09:00</span>
+            <small class="date">06/05/2023</small>
+            <img
+              src="assets/weather-icons/Weather icons-02.png"
+              alt="Weather Icon"
+            />
+            <span>Temp: <span class="hour-temp">1°C</span></span>
+          </div>
+          <div class="hour-block">
+            <span class="time">10:00</span>
+            <small class="date">06/05/2023</small>
+            <img
+              src="assets/weather-icons/Weather icons-02.png"
+              alt="Weather Icon"
+            />
+            <span>Temp: <span class="hour-temp">5°C</span></span>
+          </div>
+          <div class="hour-block">
+            <span class="time">11:00</span>
+            <small class="date">06/05/2023</small>
+            <img
+              src="assets/weather-icons/Weather icons-05.png"
+              alt="Weather Icon"
+            />
+            <span>Temp: <span class="hour-temp">8°C</span></span>
+          </div>
+          <div class="hour-block">
+            <span class="time">12:00</span>
+            <small class="date">06/05/2023</small>
+            <img
+              src="assets/weather-icons/Weather icons-03.png"
+              alt="Weather Icon"
+            />
+            <span>Temp: <span class="hour-temp">11°C</span></span>
+          </div>
+          <div class="hour-block">
+            <span class="time">13:00</span>
+            <small class="date">06/05/2023</small>
+            <img
+              src="assets/weather-icons/Weather icons-12.png"
+              alt="Weather Icon"
+            />
+            <span>Temp: <span class="hour-temp">12°C</span></span>
+          </div>
+          <div class="hour-block">
+            <span class="time">14:00</span>
+            <small class="date">06/05/2023</small>
+            <img
+              src="assets/weather-icons/Weather icons-07.png"
+              alt="Weather Icon"
+            />
+            <span>Temp: <span class="hour-temp">13°C</span></span>
+          </div>
+          <div class="hour-block">
+            <span class="time">15:00</span>
+            <small class="date">06/05/2023</small>
+            <img
+              src="assets/weather-icons/Weather icons-04.png"
+              alt="Weather Icon"
+            />
+            <span>Temp: <span class="hour-temp">11°C</span></span>
+          </div>
+          <div class="hour-block">
+            <span class="time">16:00</span>
+            <small class="date">06/05/2023</small>
+            <img
+              src="assets/weather-icons/Weather icons-05.png"
+              alt="Weather Icon"
+            />
+            <span>Temp: <span class="hour-temp">12°C</span></span>
+          </div>
+          <div class="hour-block">
+            <span class="time">17:00</span>
+            <small class="date">06/05/2023</small>
+            <img
+              src="assets/weather-icons/Weather icons-08.png"
+              alt="Weather Icon"
+            />
+            <span>Temp: <span class="hour-temp">8°C</span></span>
+          </div>
+          <div class="hour-block">
+            <span class="time">18:00</span>
+            <small class="date">06/05/2023</small>
+            <img
+              src="assets/weather-icons/Weather icons-06.png"
+              alt="Weather Icon"
+            />
+            <span>Temp: <span class="hour-temp">5°C</span></span>
+          </div>
+          <div class="hour-block">
+            <span class="time">19:00</span>
+            <small class="date">06/05/2023</small>
+            <img
+              src="assets/weather-icons/Weather icons-04.png"
+              alt="Weather Icon"
+            />
+            <span>Temp: <span class="hour-temp">3°C</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <h2>Daily Weather</h2>
+        <div id="daily-weather">
+          <div class="day-block">
+            <span class="day">06/05/2023</span>
+            <img
+              src="assets/weather-icons/Weather icons-05.png"
+              alt="Weather Icon"
+            />
+            <span>Min Temp: <span class="day-value day-min">2°C</span></span>
+            <span>Max Temp: <span class="day-value day-max">15°C</span></span>
+            <span>
+              Sunrise: <span class="day-value day-sunrise">06:32</span>
+            </span>
+            <span>Sunset: <span class="day-value day-sunset">18:52</span></span>
+          </div>
+          <div class="day-block">
+            <span class="day">23/03/2022</span>
+            <img
+              src="assets/weather-icons/Weather icons-02.png"
+              alt="Weather Icon"
+            />
+            <span>Min Temp: <span class="day-value day-min">5°C</span></span>
+            <span>Max Temp: <span class="day-value day-max">16°C</span></span>
+            <span>
+              Sunrise: <span class="day-value day-sunrise">06:30</span>
+            </span>
+            <span>Sunset: <span class="day-value day-sunset">18:53</span></span>
+          </div>
+          <div class="day-block">
+            <span class="day">24/03/2022</span>
+            <img
+              src="assets/weather-icons/Weather icons-04.png"
+              alt="Weather Icon"
+            />
+            <span>Min Temp: <span class="day-value day-min">-2°C</span></span>
+            <span>Max Temp: <span class="day-value day-max">10°C</span></span>
+            <span>
+              Sunrise: <span class="day-value day-sunrise">06:29</span>
+            </span>
+            <span>Sunset: <span class="day-value day-sunset">18:55</span></span>
+          </div>
+          <div class="day-block">
+            <span class="day">25/03/2022</span>
+            <img
+              src="assets/weather-icons/Weather icons-08.png"
+              alt="Weather Icon"
+            />
+            <span>Min Temp: <span class="day-value day-min">0°C</span></span>
+            <span>Max Temp: <span class="day-value day-max">8°C</span></span>
+            <span>
+              Sunrise: <span class="day-value day-sunrise">06:27</span>
+            </span>
+            <span>Sunset: <span class="day-value day-sunset">18:56</span></span>
+          </div>
+          <div class="day-block">
+            <span class="day">26/03/2022</span>
+            <img
+              src="assets/weather-icons/Weather icons-11.png"
+              alt="Weather Icon"
+            />
+            <span>Min Temp: <span class="day-value day-min">-4°C</span></span>
+            <span>Max Temp: <span class="day-value day-max">5°C</span></span>
+            <span>
+              Sunrise: <span class="day-value day-sunrise">06:26</span>
+            </span>
+            <span>Sunset: <span class="day-value day-sunset">18:58</span></span>
+          </div>
+          <div class="day-block">
+            <span class="day">27/03/2022</span>
+            <img
+              src="assets/weather-icons/Weather icons-12.png"
+              alt="Weather Icon"
+            />
+            <span>Min Temp: <span class="day-value day-min">1°C</span></span>
+            <span>Max Temp: <span class="day-value day-max">9°C</span></span>
+            <span>
+              Sunrise: <span class="day-value day-sunrise">06:25</span>
+            </span>
+            <span>Sunset: <span class="day-value day-sunset">18:59</span></span>
+          </div>
+          <div class="day-block">
+            <span class="day">28/03/2022</span>
+            <img
+              src="assets/weather-icons/Weather icons-06.png"
+              alt="Weather Icon"
+            />
+            <span>Min Temp: <span class="day-value day-min">2°C</span></span>
+            <span>Max Temp: <span class="day-value day-max">10°C</span></span>
+            <span>
+              Sunrise: <span class="day-value day-sunrise">06:23</span>
+            </span>
+            <span>Sunset: <span class="day-value day-sunset">19:00</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <h2>Temperature Graph</h2>
+        <div id="temp-chart"><em>Implement me</em></div>
+      </div>
+    </main>
+    <div
+      class="custom-modal"
+      id="login-modal"
+      tabindex="-1"
+      style="display: none"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form>
+            <div class="modal-header">
+              <h5 class="modal-title">Login</h5>
+              <button type="button" class="btn-close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="email" class="form-label">
+                  Email address
+                  <input type="text" class="form-control" id="email" />
+                </label>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">
+                  Password
+                  <input type="password" class="form-control" id="password" />
+                </label>
+                <button type="button" class="btn btn-sm btn-xs btn-secondary">
+                  Show password
+                </button>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src=" data.js"></script>
+  </body>
+</html>

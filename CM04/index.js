@@ -11,6 +11,8 @@ function func2() {
   console.log("funct2");
 }
 
+// func1(func2);
+
 /**
  * directions is an array of strings
  */
@@ -41,6 +43,14 @@ function getDirectionsCb(index, callback, errors) {
     }
   }, Math.floor(Math.random() * 1000) + 1);
 }
+
+// getDirectionsCb(0, () =>
+//   getDirectionsCb(1, () =>
+//     getDirectionsCb(2, () =>
+//       getDirectionsCb(3, () => getDirectionsCb(4, () => {}))
+//     )
+//   )
+// );
 
 // This is called Callback hell
 // getDirectionsCb(
@@ -91,6 +101,12 @@ function getDirectionsPromise(index) {
   });
 }
 
+const add = (a, b) => {
+  return a + b;
+};
+
+const add2 = (a, b) => a + b;
+
 // getDirectionsPromise(0)
 //   .then(() => getDirectionsPromise(1))
 //   .then(() => getDirectionsPromise(2))
@@ -110,13 +126,28 @@ function getDirectionsPromise(index) {
 function getDirections(index) {
   return new Promise(function (resolve, reject) {
     setTimeout(() => {
-      if (!directions[index]) reject(false);
+      if (!directions[index]) reject("Instructions not found");
       else {
         resolve(directions[index]); // return/sends the value inside of resolve (this will get send to the .then function)
       }
     }, Math.floor(Math.random() * 1000) + 1);
   });
 }
+
+// getDirections(0)
+//   .then((value) => {
+//     console.log(value);
+//     return getDirections(1);
+//   })
+//   .then((val2) => {
+//     console.log(val2);
+//     return getDirections(2);
+//   })
+//   .then((val3) => {
+//     console.log(val3);
+//     return getDirections(3);
+//   })
+//   .catch((err) => console.log(err));
 
 // getDirections(0).then((value) => {
 //   console.log(value);
@@ -134,6 +165,26 @@ function getDirections(index) {
 //   });
 // });
 
+// Promise.all([
+//   getDirections(0),
+//   getDirections(1),
+//   getDirections(2),
+//   getDirections(3),
+//   getDirections(9),
+// ])
+//   .then((val) => console.log(val))
+//   .catch((e) => console.log(e));
+
+// Promise.allSettled([
+//   getDirections(0),
+//   getDirections(1),
+//   getDirections(2),
+//   getDirections(3),
+//   getDirections(9),
+// ])
+//   .then((val) => console.log(val))
+//   .catch((e) => console.log(e));
+
 /**
  * ! Promise.all allows us to exectute all the promises at the same time.
  */
@@ -150,7 +201,7 @@ const p3 = new Promise((resolve, reject) => {
   setTimeout(() => resolve({ name: "Bob" }), 4000);
 });
 
-Promise.all([p1, p2, p3]).then((value) => console.log(value));
+//Promise.all([p1, p2, p3]).then((value) => console.log(value));
 
 // const all = Promise.all([
 //   getDirections(0),
@@ -167,6 +218,17 @@ Promise.all([p1, p2, p3]).then((value) => console.log(value));
 /**
  * * Async / Await syntax
  */
+
+async function getInstructions() {
+  const res0 = await getDirections(0).catch((e) => console.log(e));
+  const res1 = await getDirections(1).catch((e) => console.log(e));
+  const res2 = await getDirections(2).catch((e) => console.log(e));
+  const res3 = await getDirections(9).catch((e) => console.log(e));
+
+  console.log(res0, res1, res2, res3);
+}
+
+// getInstructions();
 
 // async function getInstructions() {
 //   try {
@@ -210,6 +272,30 @@ async function getInstructionsAsync() {
  */
 const img = document.createElement("img");
 img.width = 500;
+
+const btn = document.querySelector("button");
+
+async function getDog() {
+  // fetch("https://dog.ceo/api/breeds/image/random")
+  //   .then((res) => res.json())
+  //   .then((dog) => dog["message"])
+  //   .then((v) => {
+  //     img.src = v;
+  //     const body = document.querySelector("body");
+  //     body.appendChild(img);
+  //   });
+
+  const { message: link } = await fetch(
+    "https://dog.ceo/api/breeds/image/random"
+  ).then((res) => res.json());
+  img.src = link;
+  const body = document.querySelector("body");
+  body.appendChild(img);
+}
+
+btn.addEventListener("click", () => {
+  getDog();
+});
 
 // function getFetch() {
 //   fetch("https://dog.ceo/api/breeds/image/random")
