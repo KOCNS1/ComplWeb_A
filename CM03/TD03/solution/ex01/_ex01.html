@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../sakura.css" type="text/css" />
+    <link rel="stylesheet" href="./ex01.css" type="text/css" />
+    <title>Ex01</title>
+  </head>
+  <body>
+    <h1>Exercice 01 - Premier formulaire dynamique</h1>
+    <p>C'est l'heure de réaliser notre premier formulaire dynamique!</p>
+    <blockquote>
+      Ci-dessous vous aurez un skelette de formulaire. A vous de l'adapter pour
+      remplir le cahier des charges ci-dessous.
+      <details>
+        <summary>Cahier des charges</summary>
+        <ul>
+          <li>
+            Les champe erronés lors de l'envoi doivent être indiqués dans les
+            <code>span</code> avec la classe <code>error-msg</code> en
+            explicitant la raison à l'utilisateur de pourquoi le champ n'est pas
+            bon
+          </li>
+          <li>
+            Tous les champs sont obligatoires, sauf celui du
+            <code>Comment avez-vous connu notre application ?</code>
+          </li>
+          <li>
+            Le champ <code>Nom de naissance</code> est à afficher (et doit être
+            rempli) uniquement lorsque l'utilisateur choisit dans le champ
+            <code>Etat civil</code> les valeurs "Marié" ou "Veuf/Veuve"
+          </li>
+          <li>
+            Le champ <code>Mail de votre représentant légal</code> est à
+            afficher (et doit être rempli) uniquement si la date de naissance
+            renseignée a moins de 13 ans. Recherches sur l'objet
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date"
+              target="_blank"
+              >Date</a
+            >
+            en javascript pour vous aider avec cette partie. Complémentez avec
+            vos propres recherches
+          </li>
+          <li>
+            Vérifiez que le ou les champs e-mails à saisir sont des e-mails
+            valides
+          </li>
+          <li>
+            Le mot de passe possède les requirements suivants:
+            <ul>
+              <li>Au moins 8 caractères</li>
+              <li>Au moins 1 majuscule</li>
+              <li>Au moins 1 chiffre</li>
+            </ul>
+            Pensez à indiquer à l'utilisateur ces spécifications précises lors
+            de sa saisie
+          </li>
+          <li>
+            Vérifiez que le mot de passe et la confirmation sont identiques
+          </li>
+          <li>
+            Vérifiez que le champ <code>Code Postal</code> contient 5 chiffres
+            exactement
+          </li>
+          <li>
+            Vérifiez que le champ <code>Numéro de téléphone</code> contient que
+            chiffres
+          </li>
+          <li>
+            La checkbox <code>termes et conditions</code> doit être cochée
+          </li>
+        </ul>
+      </details>
+    </blockquote>
+    <hr />
+    <form method="get" action="ex01-submit.html">
+      <h2>Formulaire d'inscription</h2>
+      <label for="gender"
+        >Sexe*
+        <label for="male">
+          <input
+            type="radio"
+            id="male"
+            name="gender"
+            value="male"
+          />Homme</label
+        >
+
+        <label for="female">
+          <input
+            type="radio"
+            id="female"
+            name="gender"
+            value="female"
+          />Femme</label
+        >
+
+        <label for="other">
+          <input
+            type="radio"
+            id="other"
+            name="gender"
+            value="other"
+          />Autre</label
+        >
+        <span class="error-msg"></span>
+      </label>
+      <label for="civil-status">
+        Etat civil*<select id="civil-status" name="civil-status">
+          <option value="single">Célibataire</option>
+          <option value="maried">Marié(e)</option>
+          <option value="divorced">Divorcé(e)</option>
+          <option value="widow">Veuf/Veuve</option>
+        </select>
+        <span class="error-msg"></span>
+      </label>
+      <label for="last-name">
+        Nom*<input type="text" id="last-name" name="last-name" />
+        <span class="error-msg"></span>
+      </label>
+      <label for="first-name">
+        Prénom*<input type="text" id="first-name" name="first-name" />
+        <span class="error-msg"></span>
+      </label>
+      <label for="maiden-name">
+        Nom de naissance*<input
+          type="text"
+          id="maiden-name"
+          name="maiden-name"
+        />
+        <span class="error-msg"></span>
+      </label>
+      <label for="email">
+        Adresse E-Mail*<input type="text" id="email" name="email" />
+        <span class="error-msg"></span>
+      </label>
+      <label for="birth-date">
+        Date de naissance*<input
+          type="date"
+          name="birth-date"
+          id="birth-date"
+        />
+        <span class="error-msg"></span>
+      </label>
+      <label for="parent-email">
+        <small>
+          Vous avez moins de 13 ans. Merci de spécifier l'adresse mail de votre
+          représentant légal pour confirmer votre inscription
+        </small>
+        E-Mail de votre représentant légal*
+        <input type="text" id="parent-email" name="parent-email" />
+        <span class="error-msg"></span>
+      </label>
+      <label for="address">
+        Adresse*<input type="text" id="address" name="address" />
+        <span class="error-msg"></span>
+      </label>
+      <label for="postal-code">
+        Code Postal*<input type="text" id="postal-code" name="postal-code" />
+        <span class="error-msg"></span>
+      </label>
+      <label for="city">
+        Ville*<input type="text" id="city" name="city" />
+        <span class="error-msg"></span>
+      </label>
+      <label for="phone">
+        Numéro de téléphone*<input type="text" id="phone" name="phone" />
+        <span class="error-msg"></span>
+      </label>
+      <label for="password">
+        Mot de passe*<input type="password" id="password" name="password" />
+        <span class="error-msg"></span>
+      </label>
+      <label for="password-confirm">
+        Confirmez votre mot de passe*<input
+          type="password"
+          id="password-confirm"
+          name="password-confirm"
+        />
+        <span class="error-msg"></span>
+      </label>
+      <label for="comments">
+        Comment avez-vous connu notre application ?
+        <textarea id="comments" name="comments"> </textarea>
+        <span class="error-msg"></span>
+      </label>
+      <label for="terms-accept">
+        Vous acceptez les
+        <a href="#" onclick="alert('Rien à voir ici!');event.preventDefault()">
+          termes et conditions*</a
+        >
+        <input type="checkbox" id="terms-accept" name="terms-accept" />
+        <span class="error-msg"></span>
+      </label>
+      <button type="submit">Envoyer</button>
+      <script src="_ex01.js"></script>
+    </form>
+  </body>
+</html>

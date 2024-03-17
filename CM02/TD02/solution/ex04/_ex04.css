@@ -1,0 +1,14 @@
+#play-box {
+  height: 50vh;
+  position: relative;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+#play-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  image-rendering: pixelated;
+  width: 50px;
+}

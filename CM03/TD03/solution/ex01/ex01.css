@@ -1,0 +1,46 @@
+summary {
+  cursor: pointer;
+}
+
+form > label {
+  border-bottom: 1px solid #bdbdbd;
+}
+
+label > input,
+label > select {
+  margin: 0 1rem;
+}
+label > select {
+  margin-bottom: 10px;
+}
+label > small {
+  display: block;
+}
+
+label > .error-msg {
+  color: rgb(255, 60, 60);
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+label > .error-msg:not(:empty)::before {
+  content: "X";
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 1.75rem;
+  width: 1.75rem;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+ul {
+  margin-bottom: 0;
+}

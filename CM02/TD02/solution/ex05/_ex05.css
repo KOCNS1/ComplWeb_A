@@ -1,0 +1,75 @@
+details summary {
+  cursor: pointer;
+  font-style: italic;
+  font-size: 14px;
+}
+
+#gallery {
+  border: 1px solid black;
+  padding: 16px;
+}
+
+#gallery .main-picture-container {
+  max-height: 50vh;
+  display: flex;
+  flex-direction: column;
+}
+#gallery .main-picture-container img {
+  object-fit: contain;
+  height: 42vh;
+  cursor: zoom-in;
+}
+#gallery .main-picture-container p {
+  text-align: center;
+}
+#gallery .thumbnails {
+  display: flex;
+  gap: 16px;
+}
+#gallery .thumbnails > .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#gallery .thumbnails .image-container {
+  flex-grow: 2;
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+#gallery .thumbnails .image-container > * {
+  height: 11vh;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+#gallery .thumbnails .image-container > *.active {
+  border: 3px solid black;
+}
+
+.full-screen-container {
+  background-color: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+
+.full-screen-container:empty {
+  display: none;
+}
+
+.full-screen-container img {
+  height: calc(100% - 64px);
+  width: calc(100% - 64px);
+  object-fit: contain;
+  margin-bottom: 0;
+}

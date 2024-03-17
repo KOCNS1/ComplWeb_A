@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sakura.css" type="text/css" />
+    <link rel="stylesheet" href="_ex02.css" type="text/css" />
+    <title>Ex02</title>
+  </head>
+  <body>
+    <h1>Exercice 02 - "Event Bubbling"</h1>
+    <p>
+      Vous avez déjà vu quelques évènements de base dans le précédent TP. Nous
+      allons progressivement nous attacher à des évènements un peu plus
+      complexes et les interactions associées.<br />
+      Cette page crée aussi une sorte de "pseudo-console" à l'écran. Son
+      fonctionnement n'est pas vraiment étudié dans le cadre de ce TP, mais
+      cependant, vous êtes encouragés à y jeter un coup d'oeil pour analyser son
+      fonctionnement.
+    </p>
+    <blockquote>
+      > Observez ce qui se passe sur cette page HTML quand vous cliquez sur le
+      <code>button</code> "Click me!",quand vous cliquez dans la
+      <code>div</code> qui l'englobe, et quand vous cliquez sur l'élément HTML
+      <code>main</code>. Qu'est-ce que vous observez ? Comment l'expliquez-vous
+      ?
+    </blockquote>
+    <blockquote>
+      > Adaptez le script dans le fichier <code>ex02.js</code> pour utiliser
+      <code>stopPropagation</code>, et lancer uniquement l'évènement clic sur
+      l'élément cliqué
+    </blockquote>
+    <blockquote>
+      > Essayez d'adapter votre script encore pour parvenir au même résultat,
+      mais en utilisant <code>preventDefault</code> à la place (et sans utiliser
+      <code>stopPropagation</code>)
+    </blockquote>
+    <hr />
+    <dl>
+      <dr>Réponse à la première question</dr>
+      <dd>
+        Certains évènements en JS, donc le click en fait partie, ont une
+        propriété qu'on appelle le "bubbling". Ces évènements vont se lancer au
+        niveau de l'élément HTML d'où ils se sont déclenchés, et cet évènement
+        va remonter successivement les noeuds du DOM en initiant les éventuels
+        évènements présents au milieu.
+      </dd>
+    </dl>
+    <hr />
+    <script src="console-handler.js"></script>
+    <main>
+      <div id="outer-div">
+        <button id="main-button">Click me!</button>
+      </div>
+    </main>
+    <script src="_ex02.js"></script>
+  </body>
+</html>
