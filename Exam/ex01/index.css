@@ -1,0 +1,184 @@
+.custom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 101;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.custom-modal label {
+  width: 100%;
+}
+main {
+  padding: 32px 0;
+}
+#poke-list {
+  max-height: calc(100vh - 182px);
+  overflow: auto;
+}
+
+#poke-filter {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+@media screen and (max-width: 991px) {
+  #poke-list {
+    max-height: calc(100vh - 260px);
+  }
+}
+@media screen and (max-width: 768px) {
+  #main-row {
+    display: flex;
+    gap: 16px;
+  }
+  #poke-list {
+    max-height: unset;
+  }
+  main > .row > div:first-child {
+    max-height: 260px;
+  }
+  #poke-list {
+    overflow: auto;
+    max-height: 214px;
+  }
+  #poke-details .header {
+    flex-direction: column;
+    align-items: center;
+  }
+  #poke-details .header .info {
+    align-items: center;
+  }
+}
+
+#poke-details .stats {
+  padding-top: 32px;
+}
+
+#poke-details .stats ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+#poke-details .stats ul li {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+#poke-details .stats ul li .label {
+  font-weight: 600;
+  width: 70px;
+}
+
+#poke-details .stats ul li .progress {
+  width: 250px;
+  height: 24px;
+  font-weight: 800;
+}
+
+#poke-list {
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#poke-list li {
+  padding: 4px 8px;
+  background-color: #ef9a9a;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  height: 38px;
+  transition: background-color 0.05s;
+}
+
+#poke-list li img {
+  min-width: 40px;
+}
+
+#poke-list li:hover {
+  background-color: #ef5350;
+}
+
+#poke-list li.active {
+  padding: 4px 8px;
+  background-color: #f44336;
+}
+
+#poke-details .header {
+  display: flex;
+  gap: 32px;
+}
+#poke-details .header > img {
+  width: 220px;
+  border: 2px dashed #ffcdd2;
+  border-radius: 10px;
+}
+
+#poke-details .header .info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#poke-details .header .info h1 {
+  margin-bottom: 0;
+}
+
+#poke-details .header .info #poke-types {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#poke-details .header .info .attribute {
+  font-weight: 600;
+}
+#poke-details .header .info .attribute .value {
+  font-weight: 400;
+}
+
+#poke-details .header .info h1 {
+  display: flex;
+  align-items: center;
+}
+
+.padding-0 {
+  padding: 0;
+}
+
+#poke-hp .progress-bar {
+  background-color: #8bc34a;
+}
+
+#poke-attack .progress-bar {
+  background-color: #f44336;
+}
+
+#poke-defense .progress-bar {
+  background-color: #9e9e9e;
+}
+
+#poke-special-attack .progress-bar {
+  background-color: #ff5722;
+}
+
+#poke-special-defense .progress-bar {
+  background-color: #607d8b;
+}
+
+#poke-speed .progress-bar {
+  background-color: #673ab7;
+}

@@ -1,0 +1,55 @@
+.form-row > .col {
+  display: flex;
+  justify-content: center;
+}
+form {
+  width: 450px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  border: 1px solid #dedede;
+  border-radius: 3px;
+  padding: 32px;
+}
+form label {
+  width: 100%;
+}
+form .error {
+  color: #f44336;
+}
+
+form .error:empty {
+  display: none;
+}
+
+:root {
+  --captcha-size: 90px;
+  --captcha-element-size: calc(var(--captcha-size) - 4px);
+}
+
+#captcha {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(var(--captcha-size) * 3);
+  gap: 4px;
+}
+
+#captcha > * {
+  width: var(--captcha-element-size);
+  height: var(--captcha-element-size);
+}
+
+#captcha label img {
+  width: var(--captcha-element-size);
+  height: var(--captcha-element-size);
+  object-fit: cover;
+  border: 0;
+  transition: border 0.1s;
+}
+
+#captcha input {
+  display: none;
+}
+
+#captcha input:checked + label img {
+  border: 4px solid black;
+}
